@@ -154,8 +154,8 @@ services:
       - /bin/sh
       - /root/run_enb.sh
 
-  ue:
-    container_name: ue
+  ue1:
+    container_name: ue1
     build: ./virtual-UE-eNB
     ipc: "container:enb"
     cap_add:
@@ -167,7 +167,27 @@ services:
     depends_on:
       - enb
     volumes:
-      - ./virtual-UE-eNB/run_ue.sh:/root/run_ue.sh
+      - ./virtual-UE-eNB/run_ue1.sh:/root/run_ue.sh
+      - ./virtual-UE-eNB/route_ue.sh:/root/route_ue.sh
+    entrypoint:
+      - /bin/sh
+      - /root/run_ue.sh
+
+  ue2:
+    container_name: ue2
+    build: ./virtual-UE-eNB
+    ipc: "container:enb"
+    cap_add:
+      - NET_ADMIN
+      - SYS_NICE
+    devices:
+      - /dev/net/tun
+    network_mode: "none"
+    depends_on:
+      - enb
+    volumes:
+      - ./virtual-UE-eNB/run_ue2.sh:/root/run_ue.sh
+      - ./virtual-UE-eNB/route_ue.sh:/root/route_ue.sh
     entrypoint:
       - /bin/sh
       - /root/run_ue.sh

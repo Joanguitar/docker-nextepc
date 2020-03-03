@@ -18,7 +18,7 @@ RUN cd nextepc/webui && npm install && npm run build
 ENV TZ=Europe/Madrid
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get --no-install-recommends -qy install tshark 
+RUN apt-get --no-install-recommends -qy install iproute2 tcpdump net-tools iperf iperf3 tshark iputils-ping
 
 ENV MONGODB_STARTUP_TIME 5
 WORKDIR /
