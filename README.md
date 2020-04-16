@@ -47,7 +47,7 @@ sudo bash capture_traffic.sh <time>
 The variable <time> stands for the amount of time that's going to be captured.
 The captures are saved in the "capture" folder and can be openned with [Wireshark](https://www.wireshark.org/).
 
-The NextEPC GUI is running under localhost:8000 with credentials
+The NextEPC GUI is running under localhost:3000 with credentials
 - User: admin
 - Pass: 1423
 
