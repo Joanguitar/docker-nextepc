@@ -72,9 +72,14 @@ I got it running with 4GB of allocated memory and 4CPU cores without any problem
 
 ## Configuration
 
-The SIM card provisioned in the virtual UE (from srsUE) and the EPC is using the following parameters : 
+The SIM card provisioned in the virtual UE1 (from srsUE) and the EPC is using the following parameters : 
  * IMSI=001010000000001
  * Ki=c8eba87c1074edd06885cb0486718341
  * OPc=17b6c0157895bcaa1efc1cef55033f5f
- 
- Make sure to flash your SIM accordingly when using the physical eNB docker-compose example with your own eNB, using the sysmocom SIM for example.
+
+The SIM card provisioned in the virtual UE2 (from srsUE) and the EPC is using the following parameters : 
+ * IMSI=001010000000002
+ * Ki=c8eba87c1074edd06885cb0486718342
+ * OPc=17b6c0157895bcaa1efc1cef55033f6f
+
+These parameters can be changed in run_ue1.sh and run_ue2.sh of the Virtual-UE-eNB folder.
