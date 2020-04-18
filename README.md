@@ -11,7 +11,7 @@ sudo apt-get install -y git docker-compose
 Start by cloning this Github repository and moving inside the repository folder
 ```
 git clone https://github.com/Joanguitar/docker-nextepc
-cd docker-compose
+cd docker-nextepc
 ```
 Build the docker
 ```
